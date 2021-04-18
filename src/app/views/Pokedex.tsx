@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { pokemonResponseModel } from "../../models/pokemonResponseModel";
 import { getPokemonAxios } from "../../services/pokemonService";
 import { Card } from "../components/Card";
-import { Img } from "../components/Image";
-import { PokeName } from "../components/Typography";
+import { H1 } from "../components/Typography";
 
 const Pokedex = () => {
   const [
@@ -14,6 +14,8 @@ const Pokedex = () => {
   useEffect(() => {
     fetchPokemon();
   }, []);
+
+  const history = useHistory();
 
   const fetchPokemon = async () => {
     const { data } = await getPokemonAxios();
@@ -32,7 +34,7 @@ const Pokedex = () => {
     >
       {pokemonResponse?.results.map((pokemon, index) => (
         <div key={pokemon.name}>
-          <Card onClick={() => alert(pokemon.name)}>
+          <Card onClick={() => history.push("/poke-details/" + index + 1)}>
             <Card>
               <img
                 height={"35%"}
@@ -43,7 +45,7 @@ const Pokedex = () => {
               />
             </Card>
             <div>
-              <PokeName>{pokemon.name}</PokeName>
+              <H1>{pokemon.name}</H1>
             </div>
           </Card>
         </div>

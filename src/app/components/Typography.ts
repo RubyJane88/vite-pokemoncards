@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const PokeName = styled.h1(
+export const H1 = styled.h1(
   {
     fontSize: 25,
   },
