@@ -34,7 +34,7 @@ const Pokedex = () => {
     >
       {pokemonResponse?.results.map((pokemon, index) => (
         <div key={pokemon.name}>
-          <Card onClick={() => history.push("/poke-details/" + index + 1)}>
+          <Card onClick={() => history.push("/poke-details/" + (index + 1))}>
             <Card>
               <img
                 height={"35%"}
