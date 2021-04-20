@@ -33,8 +33,8 @@ const PokeDetail = () => {
   if (loading) return <h1>Loading</h1>;
 
   return (
-    <div style={{ width: "100%", background: "gray", height: "50%" }}>
-      <div style={{ margin: "auto 8rem" }}>
+    <div style={{ background: "gray" }}>
+      <div style={{ margin: "auto 10rem" }}>
         <BorderBox>
           <div>
             <div style={{ justifyItems: "center", display: "grid" }}>
@@ -104,10 +104,6 @@ const PokeDetail = () => {
                     <h2> Height</h2>
                     {pokemondetail?.height}
                   </div>
-                  {/*<div>*/}
-                  {/*  <h2>Order </h2>*/}
-                  {/*  {pokemondetail?.order}*/}
-                  {/*</div>*/}
                 </div>
               </div>
 
@@ -120,12 +116,12 @@ const PokeDetail = () => {
                 </Card>
               </div>
 
-              <Card>
+              <div>
                 <h2>Moves </h2>
                 {pokemondetail?.moves?.map((v) => (
-                  <line key={v.move.name}>{v.move.name} , </line>
+                  <span key={v.move.name}>{v.move.name} , </span>
                 ))}
-              </Card>
+              </div>
             </div>
           </div>
         </BorderBox>

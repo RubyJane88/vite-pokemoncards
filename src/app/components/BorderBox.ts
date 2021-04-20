@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const BorderBox = styled("div")`
-  margin: 2rem 2rem 2rem 2rem;
   box-sizing: border-box;
   background: #ffffff;
   display: block;
