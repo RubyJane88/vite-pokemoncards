@@ -6,6 +6,7 @@ import { Card } from "../components/Card";
 import { H1 } from "../components/Typography";
 
 const Pokedex = () => {
+  const [loading, setLoading] = useState(false);
   const [
     pokemonResponse,
     setPokemonResponse,
@@ -18,10 +19,16 @@ const Pokedex = () => {
   const history = useHistory();
 
   const fetchPokemon = async () => {
-    const { data } = await getPokemonAxios();
-
-    setPokemonResponse(data);
+    setLoading(true);
+    try {
+      const { data } = await getPokemonAxios();
+      setPokemonResponse(data);
+    } catch (e) {
+      console.log(e);
+    }
+    setLoading(false);
   };
+  if (loading) return <h2>Loading</h2>;
 
   return (
     <div
