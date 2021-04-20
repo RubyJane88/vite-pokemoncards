@@ -58,7 +58,7 @@ const PokeDetail = () => {
                   <div>
                     {id && (
                       <img
-                        height={"35%"}
+                        height={"40%"}
                         width={"60%"}
                         src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
                         alt="picture"
@@ -111,7 +111,7 @@ const PokeDetail = () => {
                 </div>
               </div>
 
-              <div style={{ background: "yellow" }}>
+              <div>
                 <Card>
                   <H1> STATS </H1>
                   {pokemondetail?.stats.map((stat) => (
@@ -120,12 +120,12 @@ const PokeDetail = () => {
                 </Card>
               </div>
 
-              <div>
+              <Card>
                 <h2>Moves </h2>
                 {pokemondetail?.moves?.map((v) => (
-                  <span key={v.move.name}>{v.move.name} , </span>
+                  <line key={v.move.name}>{v.move.name} , </line>
                 ))}
-              </div>
+              </Card>
             </div>
           </div>
         </BorderBox>
