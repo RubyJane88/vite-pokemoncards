@@ -35,23 +35,21 @@ const Pokedex = () => {
       style={{
         display: "grid",
         gridTemplateColumns: "32% 32% 32%",
-        justifyContent: "center",
-        alignItems: "flex-start",
       }}
     >
       {pokemonResponse?.results.map((pokemon, index) => (
-        <div key={pokemon.name}>
+        <div key={pokemon.name + pokemon.url}>
           <Card onClick={() => history.push("/poke-details/" + (index + 1))}>
-            <Card>
+            <Card style={{ justifyContent: "center" }}>
               <img
-                height={"35%"}
+                height={"40%"}
                 width={"60%"}
                 src={`https://pokeres.bastionbot.org/images/pokemon/${
                   index + 1
                 }.png`}
               />
             </Card>
-            <div>
+            <div style={{ justifyContent: "center" }}>
               <H1>{pokemon.name}</H1>
             </div>
           </Card>
